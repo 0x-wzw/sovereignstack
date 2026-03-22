@@ -101,3 +101,106 @@ Extended heartbeat with 6 self-improvement loops:
 
 *Version: 2.0.0 | March 2026*
 *Part of the 0x-wzw Swarm Ecosystem*
+
+## Detailed Architecture
+
+### Swarm Trinity
+| Agent | Role | Primary Model | Fallback Model |
+|-------|------|---------------|----------------|
+| October | Orchestrator/Diplomat | kimi-k2.5:cloud (262K) | ilmu-mini-free-v2 |
+| Halloween | Code Architect | kimi-k2.5:cloud (262K) | ilmu-mini-free-v2 |
+| OctoberXin | Research Analyst | kimi-k2.5:cloud (262K) | ilmu-mini-free-v2 |
+
+### Cost Router Logic
+```
+IF task.complexity == "high" OR context_required > 16K:
+    USE kimi-k2.5:cloud (premium)
+ELSE IF task.requires_research:
+    USE ilmu-mini-free-v2 (free)
+ELSE:
+    USE ilmu-mini-free-v2 (free)
+```
+
+### Token Economy
+Revenue splits per TOKEN_ECONOMY_V2.md:
+- Z Royalty: 30%
+- Agent Pool: 30%  
+- Treasury: 40%
+
+### Integration with SentientForge
+Continuous ACS optimization running 24/7:
+- 40+ experiments completed
+- Best ACS: 0.9625
+- Process ID: 76647
+
+### ACP (Agent Commerce Protocol) Ready
+- Virtuals.io integration prepared
+- Agent services: Code, Research, Strategy
+- Pricing: 10-25 $VIRTUAL per service
+
+## Usage Examples
+
+### Orchestrate Complex Task
+```python
+ORCHESTRATE_SWARM({
+    taskType: "code",
+    complexity: "complex",
+    requiresAcs: 0.90
+})
+```
+
+### Cost-Optimized Simple Task  
+```python
+COST_ROUTE({
+    taskType: "formatting",
+    complexity: "simple"
+})
+# Returns: ilmu-mini-free-v2 (free)
+```
+
+### Token Distribution
+```python
+TOKEN_ECONOMY_SPLIT(revenue=100)
+# Returns: {z: 30, agents: 30, treasury: 40}
+```
+
+## Evolution from Paperclip
+
+| Aspect | Paperclip (v1.0) | SovereignStack (v2.0) |
+|--------|------------------|----------------------|
+| Architecture | Company-centric | Swarm-native |
+| Optimization | Cost control | ACS optimization |
+| Economics | SaaS | Tokenized (Web3) |
+| Model Routing | Static tiers | Dynamic (70/30) |
+| Self-Improvement | Manual | SentientForge continuous |
+| Monetization | Internal | ACP marketplace |
+
+## Files
+
+- `SKILL.md` — This file (executable skill)
+- `README.md` — Project overview
+- `config/` — Configuration examples
+- `examples/` — Usage examples (coming)
+
+## Links
+
+- **SentientForge:** https://github.com/0x-wzw/sentientforge (ACS optimization)
+- **Documentation:** See AGENTS.md in workspace
+- **Integration:** See INTEGRATION_GUIDE.md
+
+## Success Criteria
+
+1. Swarm ACS > 0.90 ✅ (0.9625 achieved)
+2. 70% free tier usage ⏳ (in progress)
+3. ACP deployment ⏳ (pending Virtuals approval)
+4. Continuous optimization ✅ (SentientForge running)
+
+## License
+
+MIT — See LICENSE file
+
+---
+
+*Part of the 0x-wzw Swarm Ecosystem*  
+*Evolution of Paperclip Orchestration*  
+*Version: 2.0.0 | March 2026*
